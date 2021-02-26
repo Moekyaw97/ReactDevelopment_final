@@ -7,6 +7,7 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const validateUpdateUserInput = require('../../validation/updateUser');
 const User = require('../../models/User');
+const Category = require('../../models/Category');
 
 router.post('/user-add', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
@@ -121,6 +122,7 @@ router.post('/login', (req, res) => {
         });
     });
 });
+
 
 
 module.exports = router;

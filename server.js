@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require('./routes/api/users');
+const categories = require('./routes/api/categories');
+const prices = require('./routes/api/prices');
 
 require('./config/passport')(passport);
 require('dotenv').config();
@@ -32,6 +34,8 @@ mongoose.connect(process.env.DB, { useNewUrlParser: true })
 app.use(passport.initialize());
 
 app.use('/api', users);
+app.use('/api', categories);
+app.use('/api', prices);
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 

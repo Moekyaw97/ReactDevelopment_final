@@ -163,14 +163,13 @@ class Users extends Component {
             <div>
                 <Navbar/>
                 <div className="d-flex" id="wrapper">
-                    <Sidebar/>
                     <UserAddModal/>
                     <UserUpdateModal record={this.state.currentRecord}/>
                     <div id="page-content-wrapper">
                         <div className="container-fluid">
                             <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
                             <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add User</button>
-                            <h1 className="mt-2 text-primary">Users List</h1>
+                            <h1 className="mt-2 text-info">Users List</h1>
                             <ReactDatatable
                                 config={this.config}
                                 records={this.state.records}

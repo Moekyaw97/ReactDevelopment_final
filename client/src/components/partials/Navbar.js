@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import {logoutUser} from "../../actions/authActions";
+import {Link} from "react-router-dom";
 
 class Navbar extends Component {
 
@@ -16,15 +17,21 @@ class Navbar extends Component {
         const { user } = this.props.auth;
         return (
             <div className="container-fluid p-0">
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a className="navbar-brand" href="/">React with CRUD</a>
+                <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+                    <a className="navbar-brand" href="/">React Development</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                             aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
+                    <ul className="navbar-nav ml-5">
+                            <li className="nav-item active">
+                            <a href="/category" className="nav-link">Category</a>
+                            </li>
+                            </ul>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav ml-auto">
+                            
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="settings"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Dashboard from "./components/pages/Dashboard";
 import React, { Component } from 'react';
 import Login from "./components/auth/Login";
 import NotFound from "./components/layout/NotFound";
 import { Provider } from "react-redux";
+import { useParams } from "react-router";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Register from "./components/auth/Register";
+/*import Register from "./components/auth/Register";*/
 import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -19,7 +19,7 @@ import '../node_modules/jquery/dist/jquery.min';
 import '../node_modules/popper.js/dist/popper';
 
 import User from "./components/pages/Users";
-
+import Category from "./components/pages/Category";
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
     setAuthToken(token);
@@ -39,12 +39,11 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Switch>
-                            <Route exact path="/" component={Login} />
-                            /*<Route exact path="/register" component={Register} />*/
-                            <Route exact path="/login" component={Login} />
+                        <Route exact path="/" component={Login} />
+                        <Route exact path="/login" component={Login} />
                             <Switch>
-                                <PrivateRoute exact path="/dashboard" component={Dashboard} />
                                 <PrivateRoute exact path="/users" component={User} />
+                                <PrivateRoute exact path="/category" component={Category} />
                             </Switch>
                             <Route exact path="*" component={NotFound} />
                         </Switch>

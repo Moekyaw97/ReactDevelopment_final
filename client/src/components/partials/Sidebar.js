@@ -16,12 +16,10 @@ class Sidebar extends Component {
     render() {
         //const { user } = this.props.auth;
         return (
-            <div className="border-right h-100" id="sidebar-wrapper">
+            <div className="h-100" id="sidebar-wrapper">
                 <div className="list-group list-group-flush">
-                    <Link to="/dashboard" className="list-group-item list-group-item-action">Dashboard</Link>
-                    <Link to="/users" className="list-group-item list-group-item-action">Users</Link>
-                    <Link to="/events" className="list-group-item list-group-item-action">Events</Link>
-                    <button className="list-group-item list-group-item-action" onClick={this.onLogoutClick}>Logout <FontAwesomeIcon icon={faSignOutAlt} /></button>
+                    <Link to="/category" className="list-group-item list-group-item-action bg-secondary text-light">Category</Link>
+                    <button className="list-group-item list-group-item-action bg-secondary text-light" onClick={this.onLogoutClick}>Logout <FontAwesomeIcon icon={faSignOutAlt} /></button>
                 </div>
             </div>
         );
